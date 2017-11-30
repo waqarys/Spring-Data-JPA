@@ -23,3 +23,14 @@ e.g.,
 `public interface MyJpaRepository extends JpaRepository<Entity, Id type>`
 - First parameter is the JPa entity
 - Second parameter is the primary key data type
+
+# JPA Repository Features
+1. Functionality
+	- Query DSL
+	- CRUD Operations
+	- Paging and Sorting
+	- Helpers
+		- count()
+		- exists(Long id)
+		- flush
+		- deleteInBatch(Iterable entities)
