@@ -68,3 +68,10 @@ e.g.,
 e.g., 
 `findByStateLike("Cali%")`
 `findByStateNotLike("Al%")`
+
+**6. Keyword: StartingWith, endingWith and Containing**
+Similar to the "Like" keyword except the % is automatically added to the filter value.
+e.g.,
+`findByStateStartingWith("Al")`   -> 	Al%
+`findByStateEndingWith("ia")`   -> 	%ia
+`findByStateContainingWith("in")`   -> 	%in%

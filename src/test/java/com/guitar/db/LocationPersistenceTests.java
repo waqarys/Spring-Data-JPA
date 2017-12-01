@@ -95,6 +95,12 @@ public class LocationPersistenceTests {
 		List<Location> locs = locationJpaRepository.findByStateNotLike("New%");
 		assertEquals(46, locs.size());
 	}
+	
+	@Test
+	public void testFindWithStartingWith() throws Exception {
+		List<Location> locs = locationJpaRepository.findByStateStartingWith("New");
+		assertEquals(4, locs.size());
+	}
 
 	@Test
 	@Transactional  //note this is needed because we will get a lazy load exception unless we are in a tx
