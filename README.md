@@ -75,3 +75,8 @@ e.g.,
 `findByStateStartingWith("Al")`   -> 	Al%
 `findByStateEndingWith("ia")`   -> 	%ia
 `findByStateContainingWith("in")`   -> 	%in%
+
+**7. Keyword: LessThan(Equal) and GreaterThan(Equal)**
+e.g.,
+`findByPriceLessThan(20)`
+`findByPriceLessThanEqual(20)`
