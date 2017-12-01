@@ -54,29 +54,29 @@ e.g.,
 
 **3. Keyword: AND and Or **
 e.g., 
-`findByStateAndCountry("CA", "USA");`
-`findByStateOrState("CA", "AZ");`
+- `findByStateAndCountry("CA", "USA");`
+- `findByStateOrState("CA", "AZ");`
 
 **4. Keyword: Equals, Is and Not**
 e.g.,
-`findByState("CA")`
-`findByStateIs("CA")`
-`findByStateEquals("CA")`
-`findByStateNot("CA")`
+- `findByState("CA")`
+- `findByStateIs("CA")`
+- `findByStateEquals("CA")`
+- `findByStateNot("CA")`
 
 **5. Keyword: Like and NotLike**
 e.g., 
-`findByStateLike("Cali%")`
-`findByStateNotLike("Al%")`
+- `findByStateLike("Cali%")`
+- `findByStateNotLike("Al%")`
 
 **6. Keyword: StartingWith, endingWith and Containing**
 Similar to the "Like" keyword except the % is automatically added to the filter value.
 e.g.,
-`findByStateStartingWith("Al")`   -> 	Al%
-`findByStateEndingWith("ia")`   -> 	%ia
-`findByStateContainingWith("in")`   -> 	%in%
+- `findByStateStartingWith("Al")`   -> 	Al%
+- `findByStateEndingWith("ia")`   -> 	%ia
+- `findByStateContainingWith("in")`   -> 	%in%
 
 **7. Keyword: LessThan(Equal) and GreaterThan(Equal)**
 e.g.,
-`findByPriceLessThan(20)`
-`findByPriceLessThanEqual(20)`
+- `findByPriceLessThan(20)`
+- `findByPriceLessThanEqual(20)`
