@@ -53,6 +53,8 @@ e.g.,
 }`
 
 **3. Keyword: AND and Or **
-
+e.g., 
+`findByStateAndCountry("CA", "USA");`
+`findByStateOrState("CA", "AZ");`
 
 
