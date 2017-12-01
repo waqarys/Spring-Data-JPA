@@ -38,13 +38,13 @@ e.g.,
 # Query DSL (Domain Specific Language)
 
 # Query Methods Syntax Basics
-**1. Query Methods **
+**1. Query Methods**
 	- Query parser will match the following:
 		- find..By, query..By, read..By, count..By, get..By
 	- Criteria uses JPA entity attribute names
 	- Multiple criteria combined with ["And","Or"]
 	
-**2. Query Methods Return Types **
+**2. Query Methods Return Types**
 e.g.,
 `public interface LocationJpaRepository extends JpaRepository<Location, Long> {
 	List<Location> findByStateLike(String stateName);
@@ -52,7 +52,7 @@ e.g.,
 	Long countByStateLike(String stateName);
 }`
 
-**3. Keyword: AND and Or **
+**3. Keyword: AND and Or**
 e.g., 
 - `findByStateAndCountry("CA", "USA");`
 - `findByStateOrState("CA", "AZ");`
@@ -80,3 +80,9 @@ e.g.,
 e.g.,
 - `findByPriceLessThan(20)`
 - `findByPriceLessThanEqual(20)`
+
+**7. Keyword: Before, After and Between**
+e.g.,
+- `findByFoundedDateBefore(dateObj)`
+- `findByFoundedDateAfter(dateObj)`
+- `findByFoundedDateBetween(startDate, endDate)`
