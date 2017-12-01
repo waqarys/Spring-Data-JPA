@@ -38,6 +38,24 @@ e.g.,
 # Query DSL (Domain Specific Language)
 
 # Query Methods Syntax Basics
+**1. Query Methods **
+	- Query parser will match the following:
+		- find..By, query..By, read..By, count..By, get..By
+	- Criteria uses JPA entity attribute names
+	- Multiple criteria combined with ["And","Or"]
+	
+**2. Query Methods Return Types **
+e.g.,
+`public interface LocationJpaRepository extends JpaRepository<Location, Long> {
+	List<Location> findByStateLike(String stateName);
+	Location findFirstByState(String stateName);
+	Long countByStateLike(String stateName);
+}`
+
+**3. Keyword: AND and Or **
+
+
+
 ** Query Methods **
 	- Query parser will match the following:
 		- -find..By, query..By, read..By, count..By, get..By
