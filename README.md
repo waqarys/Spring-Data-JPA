@@ -36,3 +36,18 @@ e.g.,
 		- deleteInBatch(Iterable entities)
 		
 # Query DSL (Domain Specific Language)
+
+# Query Methods Syntax Basics
+** Query Methods **
+	- Query parser will match the following:
+		- -find..By, query..By, read..By, count..By, get..By
+	- Criteria uses JPA entity attribute names
+	- Multiple criteria combined with ["And","Or"]
+	
+** Query Methods Return Types **
+e.g.,
+`public interface LocationJpaRepository extends JpaRepository<Location, Long> {
+	List<Location> findByStateLike(String stateName);
+	Location findFirstByState(String stateName);
+	Long countByStateLike(String stateName);
+}`
