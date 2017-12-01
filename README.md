@@ -57,4 +57,14 @@ e.g.,
 `findByStateAndCountry("CA", "USA");`
 `findByStateOrState("CA", "AZ");`
 
+**4. Keyword: Equals, Is and Not**
+e.g.,
+`findByState("CA")`
+`findByStateIs("CA")`
+`findByStateEquals("CA")`
+`findByStateNot("CA")`
 
+**5. Keyword: Like and NotLike**
+e.g., 
+`findByStateLike("Cali%")`
+`findByStateNotLike("Al%")`
