@@ -34,3 +34,5 @@ e.g.,
 		- exists(Long id)
 		- flush
 		- deleteInBatch(Iterable entities)
+		
+# Query DSL (Domain Specific Language)
