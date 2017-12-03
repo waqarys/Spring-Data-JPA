@@ -87,7 +87,13 @@ e.g.,
 - `findByFoundedDateAfter(dateObj)`
 - `findByFoundedDateBetween(startDate, endDate)`
 
-**8. Keyword: True and False**
+**9. Keyword: True and False**
 e.g., 
 - `findByActiveTrue()`
 - `findByActiveFalse()`
+
+**10. Keyword: IsNull, IsNotnull and NotNull**
+e.g.,
+- `findByStateIsNull`
+- `findByStateIsNotNull`
+- `findByStateNotNull`
