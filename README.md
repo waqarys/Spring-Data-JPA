@@ -97,3 +97,8 @@ e.g.,
 - `findByStateIsNull`
 - `findByStateIsNotNull`
 - `findByStateNotNull`
+
+**11. Keyword: IsNull, IsNotnull and NotNull**
+e.g.,
+- `findByStateIn(Collection<String> states)`
+- `findByStateNotIn(Collection<String> states)`
