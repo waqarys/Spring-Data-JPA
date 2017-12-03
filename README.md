@@ -81,8 +81,13 @@ e.g.,
 - `findByPriceLessThan(20)`
 - `findByPriceLessThanEqual(20)`
 
-**7. Keyword: Before, After and Between**
+**8. Keyword: Before, After and Between**
 e.g.,
 - `findByFoundedDateBefore(dateObj)`
 - `findByFoundedDateAfter(dateObj)`
 - `findByFoundedDateBetween(startDate, endDate)`
+
+**8. Keyword: True and False**
+e.g., 
+- `findByActiveTrue()`
+- `findByActiveFalse()`
