@@ -114,3 +114,10 @@ Used to set order by clause on your query
 e.g.,
 - `findByStateOrderByCountryAsc()`
 - `findByStateOrderByCountryDesc()`
+
+**14. Keyword: First, Top and Distinct**
+Used to limit the results returned by the query
+e.g.,
+- `findFirstByStateLike("Al")`
+- `findTop5ByStateLike("A")`
+- `findDistinctManufacturerByStateLike("A")`

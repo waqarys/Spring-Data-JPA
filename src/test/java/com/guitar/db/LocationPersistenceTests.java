@@ -117,6 +117,12 @@ public class LocationPersistenceTests {
 			System.out.println(location.getState());
 		});
 	}
+	
+	@Test
+	public void findFirstByStateIgnoreCaseStartingWith() throws Exception {
+		Location loc = locationJpaRepository.findFirstByStateIgnoreCaseStartingWith("A");
+		assertEquals("Alabama", loc.getState());
+	}
 
 	@Test
 	@Transactional  //note this is needed because we will get a lazy load exception unless we are in a tx
