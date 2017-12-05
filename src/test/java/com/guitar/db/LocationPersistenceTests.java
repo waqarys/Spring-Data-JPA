@@ -101,6 +101,12 @@ public class LocationPersistenceTests {
 		List<Location> locs = locationJpaRepository.findByStateStartingWith("New");
 		assertEquals(4, locs.size());
 	}
+	
+	@Test
+	public void testFindWithIgnoreCaseStartingWith() throws Exception {
+		List<Location> locs = locationJpaRepository.findByStateIgnoreCaseStartingWith("new");
+		assertEquals(4, locs.size());
+	}
 
 	@Test
 	@Transactional  //note this is needed because we will get a lazy load exception unless we are in a tx

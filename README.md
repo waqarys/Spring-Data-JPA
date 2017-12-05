@@ -102,3 +102,10 @@ e.g.,
 e.g.,
 - `findByStateIn(Collection<String> states)`
 - `findByStateNotIn(Collection<String> states)`
+
+**12. Keyword: IgnoreCase**
+When you need to perform a case insensitive comparison
+e.g.,
+- `findByStateIgnoreCase("ca")`
+- `findByStateStartingWithIgnoreCase("c")`
+
