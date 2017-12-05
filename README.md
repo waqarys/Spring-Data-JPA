@@ -109,3 +109,8 @@ e.g.,
 - `findByStateIgnoreCase("ca")`
 - `findByStateStartingWithIgnoreCase("c")`
 
+**13. Keyword: OrderBy**
+Used to set order by clause on your query
+e.g.,
+- `findByStateOrderByCountryAsc()`
+- `findByStateOrderByCountryDesc()`
