@@ -11,7 +11,7 @@ import org.springframework.data.repository.query.Param;
 
 import com.guitar.db.model.Model;
 
-public interface ModelJpaRepository extends JpaRepository<Model, Long> {
+public interface ModelJpaRepository extends JpaRepository<Model, Long>, ModelJpaRepositoryCustom {
 	
 	List<Model> findByPriceGreaterThanEqualAndPriceLessThanEqual(BigDecimal low, BigDecimal high);
 	
