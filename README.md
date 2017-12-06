@@ -155,3 +155,39 @@ int updateByName(String name)`
 - Methods with @Query annotation take highest precedence
 - Methods that match a named or native named query "name"
 - Methods that follow the query DSL keyword naming structure
+
+# Paging and Sorting
+
+# Custom Repository
+
+# Auditing Support
+- @CreatedBy
+- @CreatedDate
+- LastModifiedBy
+- @LastModifiedDate 
+e.g.,
+`@Entity`
+`public class Model{`
+	`@CreatedBy`
+	`private USer user;`
+	
+	`@CreatedDate`
+	`private DateTime createdDate;`
+`}`
+
+We can use Spring's Auditor framework.
+
+public class SecurityAuditorAware implements AuditorAware<User>
+
+**XML Configuration**
+`<jpa:auditing auditor-aware-ref="securityAuditorAware" />`
+
+**Annotation Config**
+`@Configuration`
+`@EnableJpaAuditing`
+`public class Config {`
+	`@Bean`
+	`public AuditorAware<User> auditorProvider() {`
+		`return new SecurityAuditorAware();`
+	`}`
+`}`
