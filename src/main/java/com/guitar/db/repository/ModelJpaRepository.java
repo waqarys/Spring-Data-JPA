@@ -19,5 +19,8 @@ public interface ModelJpaRepository extends JpaRepository<Model, Long> {
 	@Query("select m from Model m where m.price >= :lowest and m.price <= :highest and m.woodType like :wood")
 	List<Model> queryByPriceRangeAndWoodType(@Param("lowest" ) BigDecimal lowest,
 											 @Param("highest") BigDecimal high,
-											 @Param("wood") String wood); 
+											 @Param("wood") String wood);
+	
+	//Named Query
+	List<Model> findAllModelsByType(@Param("name") String name);
 }

@@ -121,3 +121,37 @@ e.g.,
 - `findFirstByStateLike("Al")`
 - `findTop5ByStateLike("A")`
 - `findDistinctManufacturerByStateLike("A")`
+
+# Query Annotations
+- Reuse existing JPQL
+- Advanced query functionality
+- Eager loading control("fetch")
+e.g.,
+`@Query("select m from Model m where m.name = ?1")
+List<Model> queryByName(String name)`
+
+# Query Options
+**1. Named Parameters**
+- `@Query("select m from Model m where m.name = :modelname")
+List<Model> queryByName(@Param("modelname") String name)`
+
+**2. Enhanced JPQL Syntax**
+- `@Query("select m from Model m where m.name like %?1")
+List<Model> queryByName(String name)`
+
+**3. Native Queries**
+- `@Query(value = "select * from Model where name = ?0", nativeQuery = true)
+List<Model> queryByName(String name)`
+
+**4. Modifiable Queries**
+- `@Modifying
+@Query("update Model m set m.name = ?1")
+int updateByName(String name)`
+
+
+**5. Named Queries**
+
+# Query Precedence
+- Methods with @Query annotation take highest precedence
+- Methods that match a named or native named query "name"
+- Methods that follow the query DSL keyword naming structure

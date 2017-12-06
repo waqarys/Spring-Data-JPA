@@ -13,4 +13,7 @@ public interface ManufacturerJpaRepository extends JpaRepository<Manufacturer, L
 	
 	List<Manufacturer> findByActiveTrue();
 	List<Manufacturer> findByActiveFalse();
+	
+	//Named Native Query
+	List<Manufacturer> getAllThatSellAcoustics(String name);
 }
