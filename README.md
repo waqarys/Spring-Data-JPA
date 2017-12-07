@@ -191,3 +191,25 @@ public class SecurityAuditorAware implements AuditorAware<User>
 		`return new SecurityAuditorAware();`
 	`}`
 `}`
+
+# Locking
+@Entity
+public class Model{
+	@Version
+	private int version;
+	
+}
+
+**Optimistic Locking**
+- If the version number doesn't match, throws `OptimisticLockException`
+- Rolls back the transaction
+
+**Pessimistic Locking**
+- Long term locks the data for the transaction duration, preventing others from
+accessing the data until the transaction commits.
+
+`@Lock(LockModeType.PESSIMISTIC_WRITE)`
+
+`List<Model> findByModelTypeNameIn(List<String> types)`
+
+- while using `@Lock` annotation queries should run in a transaction else you will get Exception when using Data access layer.
