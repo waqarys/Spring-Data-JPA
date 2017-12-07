@@ -46,11 +46,13 @@ e.g.,
 	
 **2. Query Methods Return Types**
 e.g.,
-`public interface LocationJpaRepository extends JpaRepository<Location, Long> {
+```
+public interface LocationJpaRepository extends JpaRepository<Location, Long> {
 	List<Location> findByStateLike(String stateName);
 	Location findFirstByState(String stateName);
 	Long countByStateLike(String stateName);
-}`
+}
+```
 
 **3. Keyword: AND and Or**
 e.g., 
@@ -132,21 +134,29 @@ List<Model> queryByName(String name)`
 
 # Query Options
 **1. Named Parameters**
-- `@Query("select m from Model m where m.name = :modelname")
-List<Model> queryByName(@Param("modelname") String name)`
+```
+@Query("select m from Model m where m.name = :modelname")
+List<Model> queryByName(@Param("modelname") String name)
+```
 
 **2. Enhanced JPQL Syntax**
-- `@Query("select m from Model m where m.name like %?1")
-List<Model> queryByName(String name)`
+```
+@Query("select m from Model m where m.name like %?1")
+List<Model> queryByName(String name)
+```
 
 **3. Native Queries**
-- `@Query(value = "select * from Model where name = ?0", nativeQuery = true)
-List<Model> queryByName(String name)`
+```
+@Query(value = "select * from Model where name = ?0", nativeQuery = true)
+List<Model> queryByName(String name)
+```
 
 **4. Modifiable Queries**
-- `@Modifying
+```
+@Modifying
 @Query("update Model m set m.name = ?1")
-int updateByName(String name)`
+int updateByName(String name)
+```
 
 
 **5. Named Queries**
@@ -166,14 +176,16 @@ int updateByName(String name)`
 - LastModifiedBy
 - @LastModifiedDate 
 e.g.,
-`@Entity`
-`public class Model{`
-	`@CreatedBy`
-	`private USer user;`
+```
+@Entity
+public class Model{
+	@CreatedBy
+	private USer user;
 	
-	`@CreatedDate`
-	`private DateTime createdDate;`
-`}`
+	@CreatedDate
+	private DateTime createdDate;
+}
+```
 
 We can use Spring's Auditor framework.
 
@@ -183,22 +195,26 @@ public class SecurityAuditorAware implements AuditorAware<User>
 `<jpa:auditing auditor-aware-ref="securityAuditorAware" />`
 
 **Annotation Config**
-`@Configuration`
-`@EnableJpaAuditing`
-`public class Config {`
-	`@Bean`
-	`public AuditorAware<User> auditorProvider() {`
-		`return new SecurityAuditorAware();`
-	`}`
-`}`
+```
+@Configuration
+@EnableJpaAuditing
+public class Config {
+	@Bean
+	public AuditorAware<User> auditorProvider() {
+		`return new SecurityAuditorAware();
+	}
+}
+```
 
 # Locking
+```
 @Entity
 public class Model{
 	@Version
 	private int version;
 	
 }
+```
 
 **Optimistic Locking**
 - If the version number doesn't match, throws `OptimisticLockException`
@@ -207,9 +223,9 @@ public class Model{
 **Pessimistic Locking**
 - Long term locks the data for the transaction duration, preventing others from
 accessing the data until the transaction commits.
-
-`@Lock(LockModeType.PESSIMISTIC_WRITE)`
-
-`List<Model> findByModelTypeNameIn(List<String> types)`
+```
+@Lock(LockModeType.PESSIMISTIC_WRITE)
+List<Model> findByModelTypeNameIn(List<String> types)
+```
 
 - while using `@Lock` annotation queries should run in a transaction else you will get Exception when using Data access layer.
